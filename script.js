@@ -1,4 +1,4 @@
-const startScreen = document.getElementById('startScreen');
+const API_URL = window.location.hostname === 'localhost' ? 'http://localhost:3000' : 'https://inte-qnwt.onrender.com';
 const chatContainer = document.getElementById('chatContainer');
 const userInput = document.getElementById('userInput');
 const historyList = document.getElementById('historyList');
