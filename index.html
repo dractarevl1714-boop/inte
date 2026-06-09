@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>INTE - asistente AI</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="sidebar">
+        <div>
+            <button class="new-chat-btn" onclick="startNewChat()">
+                <span>+</span> nuevo chat
+            </button>
+            <div class="history-section">
+                <div class="history-title">recientes</div>
+                <div id="historyList"></div>
+            </div>
+        </div>
+        <div class="sidebar-footer" id="sidebarFooter">
+            <!-- Filled dynamically by script.js via /api/me -->
+            <div class="user-avatar" id="userAvatar">j</div>
+            <span id="userName">Invitado</span>
+            <button id="authBtn" class="new-chat-btn" style="margin-left:auto; padding:6px 10px; font-size:0.85rem;">Iniciar sesión</button>
+        </div>
+    </div>
+
+    <div class="main-content">
+        <div class="top-bar">
+            <button class="menu-btn" onclick="toggleSidebar()" aria-label="Abrir menú">☰</button>
+            <div class="gemini-title">INTE</div>
+            <div style="color: #9499a1; font-size: 0.9rem;">flash 1.5</div>
+        </div>
+
+        <div class="start-screen" id="startScreen">
+            <h1 class="start-title">¿en qué puedo ayudarte hoy?</h1>
+        </div>
+
+        <div class="chat-messages-container" id="chatContainer"></div>
+
+        <div class="input-container">
+            <div class="input-box-wrapper">
+                <button class="action-btn" title="Subir archivo">📁</button>
+                <input type="text" class="chat-input" id="userInput" placeholder="introduce un aviso aquí" onkeypress="handleKeyPress(event)">
+                <button class="action-btn" title="Dictado de voz">🎙️</button>
+                <button class="action-btn" style="color: #4285f4;" onclick="sendInputMessage()">➔</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
